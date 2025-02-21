@@ -1,0 +1,25 @@
+{
+  "name": "assignment-2-npm",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/meghz-glitch/Assignment-2-npm.git"
+  },
+  "author": "Megha",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/meghz-glitch/Assignment-2-npm/issues"
+  },
+  "homepage": "https://github.com/meghz-glitch/Assignment-2-npm#readme",
+  "description": "",
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "eejs": "^1.0.0",
+    "express": "^4.21.2",
+    "nodemon": "^3.1.9"
+  }
+}
