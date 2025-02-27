@@ -1,7 +1,26 @@
-<%- include("../partials/header")  %>
-<main>
-    <h2><%= item.name %></h2>
-    <img src="<%= item.img %>" alt="<%= item.name %>">
-    <p><%= item.description %></p>
-</main>
-<%- include("../partials/footer")  %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>Dance Styles -Dance World</title>
+    <link rel="stylesheet" href="/css/Styles.css">
+</head>
+<body>
+    <%- include("../partials/header") %>
+    <main>
+        <h2>Explore Dance Styles</h2>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad libero soluta praesentium, ipsa, adipisci impedit repellendus dolores nesciunt delectus deleniti officia deserunt odio! Autem, quisquam? Porro voluptate rerum voluptatibus accusamus!</p>
+        <div class="grid-container">
+            <% styles.forEach(style => { %>
+                <div class="card">
+                    <img src="<%= style.img  %>" alt=" <%= style.name %>">
+                    <h3><%= style.name %></h3>
+                    <p><%= style.description  %></p>
+                    <a href="/styles/<%= style.name.toLowwerCase() %>">Learn More</a>
+                </div>
+                <% }); %>
+        </div>
+    </main>
+    <%- inclide("../partials/footer")  %>
+</body>
+</html>

@@ -1,6 +1,8 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
+    margin: 0;
+    padding: 0;
     background: liner-gradient(45deg, #ff4081, #7b1fa2);
     animation: bgDance 10s infinite alternate;
 }
@@ -15,6 +17,9 @@ header {
     color: white;
     padding: 1rem;
     animation: slideIn 1s forwards;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 @keyframes slideIn {
@@ -26,11 +31,19 @@ nav a {
     margin: 0 15px;
     color: white;
     text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #ffeb3b;
 }
 
 main {
     opacity: 0;
     animation: fadeIn 1s forwards;
+    padding: 20px;
 }
 
 @keyframes fadeIn {
@@ -38,14 +51,62 @@ main {
     to { opacity: 1; }
 }
 
-img {
-    width: 300px;
-    height: auto;
-    transition: transform 0.5s ease-in-out;
+.grid-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
 }
 
-img:hover {
-    transition: scale(1.1) rotate(5deg);
+.card {
+    width: 300px;
+    background: white;
+    padding: 15px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 8px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    color: black;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 6px 12px rgba(0,0,0,0.3);
+}
+
+
+ .card img {
+    width: 100px;
+    height: auto;
+    border-radius: 8px;
+}
+
+.card h3 {
+    margin-top: 10px;
+    font-size: 1.5rem;
+    color: #ff4081; 
+}
+
+.card p {
+    font-size: 1rem;
+    color: #555;
+}
+
+.card a  {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 12px;
+    background: #ff4081;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.card a:hover {
+    background: #e91e63;
 }
 
 button {
@@ -54,8 +115,42 @@ button {
     font-size: 1rem;
     cursor: pointer;
     transition: transform 0.2s;
+    border: none;
+    border-radius: 5px;
 }
 
 button:hover {
     transform: scale(1.1);
+    background: #fdd835;
+}
+
+footer {
+    background: #222;
+    color: white;
+    padding: 15px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    .grid-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 90%;
+    }
+
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    nav a {
+        display: block;
+        margin: 10px 0;
+    }
 }
