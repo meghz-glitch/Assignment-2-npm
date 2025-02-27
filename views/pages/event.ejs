@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dance Events - Dance World</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+   <%- include("../partials/header")  %>
+   
+   <main>
+    <h2>Upcoming Dance Events!</h2>
+    <p>Join the best workshops and competitions!</p>
+
+    <div class="grid-container">
+        <% events.forEach(event =>) { %>
+            <div class="card">
+                <img src="event.img" alt="<%= event.name  %>">
+                <h3><%= event.name  %></h3>
+                <p><%= event.description  %></p>
+                <a href="/events/<%= event.name.toLowwerCase() %>">View detais</a>
+            </div>
+            <% }); %>
+    </div>
+   </main>
+   <%- include("../partials/footer") %>
+</body>
+</html>
