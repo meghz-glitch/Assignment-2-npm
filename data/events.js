@@ -1,6 +1,16 @@
-const { name } = require("ejs");
+import { name } from "ejs"
 
-module.exports = [
-    { name: "worksshops", description: "Learn from top dancers!", img:"/images/workshop.jpg"},
-    { name: "Competitions", description: "Show your skills & win prizes!", img:"/images/dance4.jpg"}
+export const allStyles = [
+    {
+    name: "workshops",
+    img: "/images/workshop.jpg",
+    description: "Learn from top dancers!"
+    },
+
+    {
+        name: "competitions",
+        img: "/images/dance4.jpg",
+        description: "Show your skills & win prizes!"
+    }
+
 ];

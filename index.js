@@ -3,7 +3,7 @@ import stylesRouter from "./routes/stylesRouter.js";
 import eventsRouter from "./routes/eventsRouter.js";
 import dotenv from "dotenv";
 import * as path from "path";
-import { allStyles } from "./data/styles.js"
+
 
 dotenv.config();
 
@@ -13,7 +13,6 @@ const app = express();
 
 app.get("/", (req, res) => {
     res.render("pages/home", {
-        allStyles: allStyles
     });
 });
 
