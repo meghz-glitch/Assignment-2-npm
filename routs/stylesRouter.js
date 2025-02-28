@@ -3,8 +3,6 @@ import { allStyles } from "../data/styles.js";
 
 
 const router = express.Router();
-const styles = require("../data/styles");
-
 router.get("/", (req, res) => {
     res.render("pages/styles", { styles: allStyles });
 

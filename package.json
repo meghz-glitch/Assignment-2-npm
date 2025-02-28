@@ -2,6 +2,7 @@
   "name": "assignment-2-npm",
   "version": "1.0.0",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js"
@@ -18,7 +19,6 @@
   "homepage": "https://github.com/meghz-glitch/Assignment-2-npm#readme",
   "dependencies": {
     "dotenv": "^16.4.7",
-    "eejs": "^1.0.0",
     "ejs": "^3.1.10",
     "express": "^4.21.2",
     "nodemon": "^3.1.9"

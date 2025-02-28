@@ -1,4 +1,4 @@
-import { name } from "ejs"
+
 
 export const allStyles = [
     {

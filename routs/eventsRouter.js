@@ -1,17 +1,22 @@
-const express = require("express");
+import express from "express";
+import { allStyles } from "../data/events.js";
+
+
 const router = express.Router();
-const events = require("../data/events");
-
 router.get("/", (req, res) => {
-    res.render("pages/events", { events });
+    res.render("pages/styles", { styles: allStyles });
+
 });
 
-router.get("/:event", (req, res) => {
-    const event = events.find(e => e.name.toLowerCase() === req.params.event.toLowerCase());
-    if (event) {
-        res.render("pages/styles", {item: event });
-    } else {
-res.status(404).send("Event not found");
+router.get("/:style", (req, res) => {
+    const styleName = req.params.style;
+    const style = allStyles.find(s => s.name.toLowerCase() === styleName.toLowerCase());
+
+    if (!style) {
+        return res.status(404).send("Dance style not found");
     }
+
+    res.render("pages/styleDetail", {style });
 });
-module.exports = router;
+
+export default router;
