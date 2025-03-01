@@ -1,5 +1,5 @@
 import express from 'express';
-// import stylesRouter from "./routes/stylesRouter.js";
+ import stylesRouter from "./routes/stylesRouter.js";
 import eventsRouter from "./routes/eventsRouter.js";
 import dotenv from "dotenv";
 import * as path from "path";
@@ -19,7 +19,7 @@ app.get("/", (req, res) => {
     });
 });
 
-// app.use("/styles", stylesRouter);
+ app.use("/styles", stylesRouter);
 app.use("/events", eventsRouter);
 
 

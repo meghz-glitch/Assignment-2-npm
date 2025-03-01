@@ -2,7 +2,7 @@
 export const allStyles = [
     {
     name: "workshops",
-    img: "/images/workshop.jpg",
+    img: "/images/workshop2.jpg",
     description: "Learn from top dancers!"
     },
 

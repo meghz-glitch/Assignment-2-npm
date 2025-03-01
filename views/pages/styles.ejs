@@ -16,11 +16,11 @@
                     <img src="<%= style.img  %>" alt=" <%= style.name %>">
                     <h3><%= style.name %></h3>
                     <p><%= style.description  %></p>
-                    <a href="/styles/<%= style.name.toLowwerCase() %>">Learn More</a>
+                    <a href="/styles/<%= style.name.toLowerCase() %>">Learn More</a>
                 </div>
                 <% }); %>
         </div>
     </main>
-    <%- inclide("../partials/footer")  %>
+    <%- include("../partials/footer")  %>
 </body>
 </html>

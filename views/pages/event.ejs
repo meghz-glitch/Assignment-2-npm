@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dance Events - Dance World</title>
-    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
    <%- include("../partials/header")  %>
@@ -14,12 +14,12 @@
     <p>Join the best workshops and competitions!</p>
 
     <div class="grid-container">
-        <% events.forEach(event =>) { %>
+        <% events.forEach(event => { %>
             <div class="card">
-                <img src="event.img" alt="<%= event.name  %>">
+                <img src="<%= event.img %>" alt="<%= event.name  %>">
                 <h3><%= event.name  %></h3>
                 <p><%= event.description  %></p>
-                <a href="/events/<%= event.name.toLowwerCase() %>">View detais</a>
+                <a href="/events/<%= event.name.toLowerCase() %>">View details</a>
             </div>
             <% }); %>
     </div>
