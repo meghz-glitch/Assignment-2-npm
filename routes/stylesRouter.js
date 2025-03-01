@@ -16,7 +16,7 @@ router.get("/:style", (req, res) => {
         return res.status(404).send("Dance style not found");
     }
 
-    res.render("pages/styleDetail", {style });
+    res.render("pages/styles", {style });
 });
 
 export default router;

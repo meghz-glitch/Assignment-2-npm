@@ -13,10 +13,10 @@ router.get("/:style", (req, res) => {
     const style = allStyles.find(s => s.name.toLowerCase() === styleName.toLowerCase());
 
     if (!style) {
-        return res.status(404).send("Dance style not found");
+        return res.status(404).send("Events style not found");
     }
 
-    res.render("pages/styleDetail", {style });
+    res.render("pages/events", {style });
 });
 
 export default router;
