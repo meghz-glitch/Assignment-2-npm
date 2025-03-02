@@ -1,7 +1,20 @@
-<%- include("../partials/header") %>
-<main>
-    <h2><%= event.name %></h2>
-    <img src="<%= event.img %>" alt="<%= event.name %>">
-    <p><%= event.description %></p>
-</main>
-<%- include("../partials/footer") %>
+<!-- views/pages/eventDetail.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= event.name %> - Dance World</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <%- include("../partials/header") %>
+    <main>
+        <h2><%= event.name %></h2>
+        <img src="<%= event.img %>" alt="<%= event.name %>">
+        <p><%= event.description %></p>
+    </main>
+    <%- include("../partials/footer") %>
+</body>
+</html>

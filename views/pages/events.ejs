@@ -1,3 +1,5 @@
+<!-- views/pages/events.ejs -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,27 +10,21 @@
 </head>
 <body>
     <%- include("../partials/header") %>
-   
     <main>
-        <h2>Upcoming Dance Events!</h2>
+        <h2>Upcoming Dance Events</h2>
         <p>Join the best workshops and competitions!</p>
 
         <div class="grid-container">
-            <% if (events && events.length > 0) { %>
-                <% events.forEach(event => { %>
-                    <div class="card">
-                        <img src="<%= event.img %>" alt="<%= event.name %>">
-                        <h3><%= event.name %></h3>
-                        <p><%= event.description %></p>
-                        <a href="/events/<%= event.name.toLowerCase() %>">View details</a>
-                    </div>
-                <% }) %>
-            <% } else { %>
-                <p>No events available at the moment.</p>
-            <% } %>
+            <% events.forEach(event => { %>
+                <div class="card">
+                    <img src="<%= event.img %>" alt="<%= event.name %>">
+                    <h3><%= event.name %></h3>
+                    <p><%= event.description %></p>
+                    <a href="/events/<%= event.name.toLowerCase() %>">View details</a>
+                </div>
+            <% }); %>
         </div>
     </main>
-   
     <%- include("../partials/footer") %>
 </body>
 </html>

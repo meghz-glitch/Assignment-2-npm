@@ -1,3 +1,5 @@
+<!-- views/pages/styles.ejs -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,23 +10,21 @@
 </head>
 <body>
     <%- include("../partials/header") %>
-    
     <main>
         <h2>Explore Dance Styles</h2>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad libero soluta praesentium, ipsa, adipisci impedit repellendus dolores nesciunt delectus deleniti officia deserunt odio! Autem, quisquam? Porro voluptate rerum voluptatibus accusamus!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam suscipit consequat est.</p>
 
         <div class="grid-container">
             <% styles.forEach(style => { %>
                 <div class="card">
-                    <img src="<%= style.img  %>" alt="<%= style.name %>">
+                    <img src="<%= style.img %>" alt="<%= style.name %>">
                     <h3><%= style.name %></h3>
-                    <p><%= style.description  %></p>
+                    <p><%= style.description %></p>
                     <a href="/styles/<%= style.name.toLowerCase() %>">Learn More</a>
                 </div>
             <% }); %>
         </div>
     </main>
-
     <%- include("../partials/footer") %>
 </body>
 </html>

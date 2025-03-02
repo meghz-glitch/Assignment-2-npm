@@ -1,7 +1,20 @@
-<%- include("../partials/header") %>
-<main>
-    <h2><%= style.name %></h2>
-    <img src="<%= style.img %>" alt="<%= style.name %>">
-    <p><%= style.description %></p>
-</main>
-<%- include("../partials/footer") %>
+<!-- views/pages/styleDetail.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= style.name %> - Dance World</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <%- include("../partials/header") %>
+    <main>
+        <h2><%= style.name %></h2>
+        <img src="<%= style.img %>" alt="<%= style.name %>">
+        <p><%= style.description %></p>
+    </main>
+    <%- include("../partials/footer") %>
+</body>
+</html>
