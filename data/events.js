@@ -1,4 +1,3 @@
-// events.js
 
 export const allEvents = [
     {

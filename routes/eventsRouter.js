@@ -1,16 +1,15 @@
-// routes/eventsRouter.js
 
 import express from 'express';
-import { allEvents } from "../data/events.js";  // Import all events data
+import { allEvents } from "../data/events.js";  
 
 const router = express.Router();
 
-// Route for all events
+
 router.get("/", (req, res) => {
     res.render("pages/events", { events: allEvents });
 });
 
-// Route for a specific event
+
 router.get("/:event", (req, res) => {
     const eventName = req.params.event;
     const event = allEvents.find(e => e.name.toLowerCase() === eventName.toLowerCase());
@@ -19,7 +18,7 @@ router.get("/:event", (req, res) => {
         return res.status(404).send("Event not found");
     }
 
-    res.render("pages/eventDetail", { event }); // Assuming you have an eventDetail.ejs for displaying event details
+    res.render("pages/eventDetail", { event }); 
 });
 
 export default router;

@@ -1,4 +1,3 @@
-// app.js
 
 import express from 'express';
 import stylesRouter from "./routes/stylesRouter.js";
@@ -16,12 +15,12 @@ app.set("view engine", "ejs");
 app.use(express.static(path.join(__dirname, "public")));
 app.set("views", path.join(__dirname, "views"));
 
-// Home route
+
 app.get("/", (req, res) => {
     res.render("pages/home");
 });
 
-// Use styles and events routers
+
 app.use("/styles", stylesRouter);
 app.use("/events", eventsRouter);
 

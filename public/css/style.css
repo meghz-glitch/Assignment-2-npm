@@ -1,4 +1,4 @@
-/* General styles for the body and HTML */
+
 html, body {
     height: 100%;
     margin: 0;
@@ -16,7 +16,7 @@ html, body {
     100% { background-position: right; }
 }
 
-/* Header Styles */
+
 header {
     background: #ff5722;
     color: white;
@@ -32,7 +32,7 @@ header {
     to { transform: translateY(0); }
 }
 
-/* Navigation Links */
+
 nav a {
     margin: 0 15px;
     color: white;
@@ -46,7 +46,7 @@ nav a:hover {
     color: #ffeb3b;
 }
 
-/* Main Content Styles */
+
 main {
     flex: 1;
     padding: 20px;
@@ -62,7 +62,7 @@ main {
     to { opacity: 1; }
 }
 
-/* Grid Container for Cards */
+
 .grid-container {
     display: flex;
     justify-content: center;
@@ -71,7 +71,7 @@ main {
     padding: 20px;
 }
 
-/* Card Styling */
+
 .card {
     width: 300px;
     background: white;
@@ -87,18 +87,18 @@ main {
     transform: scale(1.05);
 }
 
-/* Image Styling within Cards */
+
 .card img {
     width: 100%;
-    max-height: 180px;  /* Limit image height */
-    object-fit: cover;  /* Ensure the image covers the container */
+    max-height: 180px;  
+    object-fit: cover;  
     border-radius: 8px;
 }
 
-/* Specific Styling for Workshop Image */
+
 .card img.workshop-img {
     width: 100%;
-    max-height: 180px;  /* Ensure it doesn't get too big */
+    max-height: 180px;  
     object-fit: cover;
     border-radius: 8px;
 }
@@ -114,7 +114,7 @@ main {
     color: #555;
 }
 
-/* Card Links */
+
 .card a {
     display: inline-block;
     margin-top: 10px;
@@ -131,7 +131,7 @@ main {
     background: #e91e63;
 }
 
-/* Button Styles */
+
 button {
     background: #ffeb3b;
     padding: 10px;
@@ -147,7 +147,7 @@ button:hover {
     background: #fdd835;
 }
 
-/* Footer Styling */
+
 footer {
     background: #222;
     color: white;
@@ -158,7 +158,7 @@ footer {
     position: relative;
 }
 
-/* Media Queries for Responsiveness */
+
 @media (max-width: 768px) {
     .grid-container {
         flex-direction: column;
