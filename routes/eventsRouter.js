@@ -4,7 +4,7 @@ import { allStyles } from "../data/events.js";
 
 const router = express.Router();
 router.get("/", (req, res) => {
-    res.render("pages/styles", { styles: allStyles });
+    res.render("pages/events", { events: allStyles });
 
 });
 
