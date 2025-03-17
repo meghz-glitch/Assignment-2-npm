@@ -1,3 +1,6 @@
+* {
+    box-sizing: border-box;
+}
 
 html, body {
     height: 100%;
@@ -9,6 +12,7 @@ html, body {
     text-align: center;
     background: linear-gradient(45deg, #ff4081, #7b1fa2);
     animation: bgDance 10s infinite alternate;
+   object-fit: cover;
 }
 
 @keyframes bgDance {
