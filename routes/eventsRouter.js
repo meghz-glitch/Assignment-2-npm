@@ -3,7 +3,7 @@ import { allData } from "../data/data.js";
 
 const router = express.Router();
 
-// Route to display all events
+
 router.get("/", (req, res) => {
     res.render("pages/list", { 
         title: "Dance Events",
@@ -15,7 +15,7 @@ router.get("/", (req, res) => {
     });
 });
 
-// Route to display a single event
+
 router.get("/:eventSlug", (req, res) => {
     const eventSlug = req.params.eventSlug.toLowerCase();
     const event = allData.events.find(e => e.slug === eventSlug);

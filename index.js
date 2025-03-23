@@ -10,14 +10,14 @@ const __dirname = path.resolve();
 const PORT = process.env.PORT || 3030;
 const app = express();
 
-// Set EJS as the view engine
+
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
-// Serve static files from the "public" folder
+
 app.use(express.static(path.join(__dirname, "public")));
 
-// Routes
+
 app.get("/", (req, res) => {
     res.render("pages/home");
 });
@@ -25,7 +25,7 @@ app.get("/", (req, res) => {
 app.use("/styles", stylesRouter);
 app.use("/events", eventsRouter);
 
-// Start the server
+
 app.listen(PORT, () => 
     console.log(`Server is running on http://localhost:${PORT}`)
 );

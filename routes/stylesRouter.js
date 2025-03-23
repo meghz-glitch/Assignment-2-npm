@@ -3,7 +3,7 @@ import { allData } from "../data/data.js";
 
 const router = express.Router();
 
-// Route to display all styles
+
 router.get("/", (req, res) => {
     res.render("pages/list", { 
         title: "Dance Styles",
@@ -15,7 +15,7 @@ router.get("/", (req, res) => {
     });
 });
 
-// Route to display a single style
+
 router.get("/:styleSlug", (req, res) => {
     const styleSlug = req.params.styleSlug.toLowerCase();
     const style = allData.styles.find(s => s.slug === styleSlug);
