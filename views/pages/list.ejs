@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %> - Dance World</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <%- include("../partials/header") %>
+    <main>
+        <h2><%= heading %></h2>
+        <p><%= description %></p>
+
+        <div class="grid-container">
+            <% items.forEach(item => { %>
+                <div class="card">
+                    <img src="<%= item.img %>" alt="<%= item.name %>" class="responsive-img">
+                    <h3><%= item.name %></h3>
+                    <p><%= item.description %></p>
+                    <a href="<%= basePath %>/<%= item.slug %>">
+                        <%= linkText %>
+                    </a>
+                </div>
+            <% }); %>
+        </div>
+    </main>
+    <%- include("../partials/footer") %>
+</body>
+</html>

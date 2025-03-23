@@ -12,14 +12,13 @@ html, body {
     text-align: center;
     background: linear-gradient(45deg, #ff4081, #7b1fa2);
     animation: bgDance 10s infinite alternate;
-   object-fit: cover;
+    object-fit: cover;
 }
 
 @keyframes bgDance {
     0% { background-position: left; }
     100% { background-position: right; }
 }
-
 
 header {
     background: #ff5722;
@@ -36,7 +35,6 @@ header {
     to { transform: translateY(0); }
 }
 
-
 nav a {
     margin: 0 15px;
     color: white;
@@ -50,7 +48,6 @@ nav a:hover {
     color: #ffeb3b;
 }
 
-
 main {
     flex: 1;
     padding: 20px;
@@ -59,13 +56,16 @@ main {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background-image: url('/images/dance3.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
 }
-
 
 .grid-container {
     display: flex;
@@ -74,7 +74,6 @@ main {
     gap: 20px;
     padding: 20px;
 }
-
 
 .card {
     width: 300px;
@@ -91,16 +90,7 @@ main {
     transform: scale(1.05);
 }
 
-
 .card img {
-    width: 100%;
-    max-height: 180px;  
-    object-fit: cover;  
-    border-radius: 8px;
-}
-
-
-.card img.workshop-img {
     width: 100%;
     max-height: 180px;  
     object-fit: cover;
@@ -118,7 +108,6 @@ main {
     color: #555;
 }
 
-
 .card a {
     display: inline-block;
     margin-top: 10px;
@@ -135,7 +124,6 @@ main {
     background: #e91e63;
 }
 
-
 button {
     background: #ffeb3b;
     padding: 10px;
@@ -151,7 +139,6 @@ button:hover {
     background: #fdd835;
 }
 
-
 footer {
     background: #222;
     color: white;
@@ -161,7 +148,6 @@ footer {
     margin-top: auto;
     position: relative;
 }
-
 
 @media (max-width: 768px) {
     .grid-container {
@@ -177,9 +163,17 @@ footer {
         flex-direction: column;
         text-align: center;
     }
-    
+
     nav a {
         display: block;
         margin: 10px 0;
+    }
+
+    main {
+        padding: 10px;
+    }
+
+    .card img {
+        max-height: 150px;
     }
 }

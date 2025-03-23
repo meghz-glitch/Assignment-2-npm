@@ -1,19 +1,20 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= event.name %> - Dance World</title>
+    <title><%= item.name %> - Dance World</title>
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
     <%- include("../partials/header") %>
+
     <main>
-        <h2><%= event.name %></h2>
-        <img src="<%= event.img %>" alt="<%= event.name %>">
-        <p><%= event.description %></p>
+        <h2><%= item.name %></h2>
+        <img src="<%= item.img %>" alt="<%= item.name %>" class="responsive-img">
+        <p><%= item.description %></p>
     </main>
+
     <%- include("../partials/footer") %>
 </body>
 </html>

@@ -1,25 +1,33 @@
-
 import express from 'express';
-import { allEvents } from "../data/events.js";  
+import { allData } from "../data/data.js";
 
 const router = express.Router();
 
-
+// Route to display all events
 router.get("/", (req, res) => {
-    res.render("pages/events", { events: allEvents });
+    res.render("pages/list", { 
+        title: "Dance Events",
+        heading: "Upcoming Dance Events",
+        description: "Join the best workshops and competitions!",
+        items: allData.events,
+        basePath: "/events",
+        linkText: "View details"
+    });
 });
 
-
-router.get("/:event", (req, res) => {
-    const eventName = req.params.event;
-    const event = allEvents.find(e => e.name.toLowerCase() === eventName.toLowerCase());
+// Route to display a single event
+router.get("/:eventSlug", (req, res) => {
+    const eventSlug = req.params.eventSlug.toLowerCase();
+    const event = allData.events.find(e => e.slug === eventSlug);
 
     if (!event) {
-        return res.status(404).send("Event not found");
+        return res.status(404).render("pages/error", { 
+            message: "Event not found", 
+            backLink: "/events" 
+        });
     }
 
-    res.render("pages/eventDetail", { event }); 
+    res.render("pages/detail", { item: event, itemType: "Event" });
 });
 
 export default router;
-    
