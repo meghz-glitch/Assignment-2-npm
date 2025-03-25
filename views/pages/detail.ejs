@@ -1,18 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= item.name %> - Dance World</title>
-    <link rel="stylesheet" href="/css/style.css">
+    <%- include("../partials/head", { title: "Home - Dance World" }) %>
 </head>
 <body>
     <%- include("../partials/header") %>
 
     <main>
-        <h2><%= item.name %></h2>
-        <img src="<%= item.img %>" alt="<%= item.name %>" class="responsive-img">
-        <p><%= item.description %></p>
+        <% if (typeof item !== "undefined") { %>
+            <% if (typeof item.name !== "undefined") { %>
+                <h2><%= item.name %></h2>
+            <% } %>
+
+            <% if (typeof item.img !== "undefined") { %>
+                <img src="<%= item.img %>" alt="<%= item.name || 'Dance Image' %>" class="responsive-img">
+            <% } %>
+
+            <% if (typeof item.description !== "undefined") { %>
+                <p><%= item.description %></p>
+            <% } %>
+        <% } else { %>
+            <p>No item data available.</p>
+        <% } %>
     </main>
 
     <%- include("../partials/footer") %>

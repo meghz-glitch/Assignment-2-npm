@@ -1,28 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= title %> - Dance World</title>
-    <link rel="stylesheet" href="/css/style.css">
+    <%- include("../partials/head", { title: "Home - Dance World" }) %>
 </head>
 <body>
     <%- include("../partials/header") %>
     <main>
-        <h2><%= heading %></h2>
-        <p><%= description %></p>
+        <% if (typeof heading !== "undefined") { %>
+            <h2><%= heading %></h2>
+        <% } %>
+
+        <% if (typeof description !== "undefined") { %>
+            <p><%= description %></p>
+        <% } %>
 
         <div class="grid-container">
-            <% items.forEach(item => { %>
-                <div class="card">
-                    <img src="<%= item.img %>" alt="<%= item.name %>" class="responsive-img">
-                    <h3><%= item.name %></h3>
-                    <p><%= item.description %></p>
-                    <a href="<%= basePath %>/<%= item.slug %>">
-                        <%= linkText %>
-                    </a>
-                </div>
-            <% }); %>
+            <% if (typeof items !== "undefined" && Array.isArray(items) && items.length > 0) { %>
+                <% items.forEach(item => { %>
+                    <div class="card">
+                        <% if (typeof item.img !== "undefined") { %>
+                            <img src="<%= item.img %>" alt="<%= item.name %>" class="responsive-img">
+                        <% } %>
+
+                        <% if (typeof item.name !== "undefined") { %>
+                            <h3><%= item.name %></h3>
+                        <% } %>
+
+                        <% if (typeof item.description !== "undefined") { %>
+                            <p><%= item.description %></p>
+                        <% } %>
+
+                        <% if (typeof basePath !== "undefined" && typeof item.slug !== "undefined" && typeof linkText !== "undefined") { %>
+                            <a href="<%= basePath %>/<%= item.slug %>">
+                                <%= linkText %>
+                            </a>
+                        <% } %>
+                    </div>
+                <% }); %>
+            <% } else { %>
+                <p>No items available.</p>
+            <% } %>
         </div>
     </main>
     <%- include("../partials/footer") %>
